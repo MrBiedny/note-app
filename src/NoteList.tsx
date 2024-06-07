@@ -68,14 +68,14 @@ function NoteList({
         <Col xs="auto">
           <Stack gap={2} direction="horizontal">
             <Link to="/new">
-              <Button
-                onClick={() => setEditTagsModalIsOpen(true)}
-                variant="primary"
-              >
-                Create
-              </Button>
+              <Button variant="primary">Create</Button>
             </Link>
-            <Button variant="outline-secondary">Edit Tags</Button>
+            <Button
+              onClick={() => setEditTagsModalIsOpen(true)}
+              variant="outline-secondary"
+            >
+              Edit Tags
+            </Button>
           </Stack>
         </Col>
       </Row>
@@ -149,7 +149,7 @@ function NoteCard({ id, title, tags }: SimplifiedNote) {
             <Stack
               gap={1}
               direction="horizontal"
-              className="jusify-content-center flex-wrap"
+              className="justify-content-center flex-wrap"
             >
               {tags.map((tag) => (
                 <Badge className="text-truncate" key={tag.id}>
@@ -173,7 +173,7 @@ function EditTagsModal({
 }: EditTagsModalProps) {
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header>
+      <Modal.Header closeButton>
         <Modal.Title>Edit Tags</Modal.Title>
       </Modal.Header>
       <Modal.Body>

@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "react-bootstrap";
+import { useMemo } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { v4 as uuidV4 } from "uuid";
+import { Container } from "react-bootstrap";
 import NewNote from "./NewNote";
 import useLocalStorage from "./useLocalStorage";
-import { useMemo } from "react";
-import { v4 as uuidV4 } from "uuid";
 import NoteList from "./NoteList";
 import NoteLayout from "./NoteLayout";
 import Note from "./Note";

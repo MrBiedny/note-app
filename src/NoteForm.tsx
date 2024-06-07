@@ -2,10 +2,10 @@ import { FormEvent, useRef, useState } from "react";
 import { Button, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import ReactSelectCreatable from "react-select/creatable";
-import { NoteData, Tag } from "./App";
 import { v4 as uuidV4 } from "uuid";
+import { NoteData, Tag } from "./App";
 
-type NotFormProps = {
+type NoteFormProps = {
   onSubmit: (data: NoteData) => void;
   onAddTag: (tag: Tag) => void;
   availableTags: Tag[];
@@ -18,7 +18,7 @@ function NoteForm({
   title = "",
   markdown = "",
   tags = [],
-}: NotFormProps) {
+}: NoteFormProps) {
   const titleRef = useRef<HTMLInputElement>(null);
   const markdownRef = useRef<HTMLTextAreaElement>(null);
   const [selectedTags, setSelectedTags] = useState<Tag[]>(tags);
